@@ -11,4 +11,4 @@ COPY hello.sh ./
 # они не нужны нам в продакшен-окружении
 # копируем исходный код
 EXPOSE 3000
-ENTRYPOINT ["sh" "hello.sh"]
+ENTRYPOINT ["sh hello.sh"]

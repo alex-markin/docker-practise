@@ -1,7 +1,7 @@
 FROM node:16-alpine
 
 # создание директории приложения
-# WORKDIR /usr/src/app
+WORKDIR /home/ilovedocker/app
 
 # установка зависимостей
 # астериск ("*") по возможности скопирует оба файла: package.json и package-lock.json
@@ -9,9 +9,6 @@ FROM node:16-alpine
 COPY hello.sh ./
 # Флаг --omit=dev означает - "не ставить devDependencies"
 # они не нужны нам в продакшен-окружении
-RUN npm i --omit=dev
 # копируем исходный код
-COPY . .
-
 EXPOSE 3000
 CMD ["sh", "-c", "./hello.sh"] 
